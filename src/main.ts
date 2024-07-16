@@ -54,16 +54,12 @@ const decoded = changes.map((change) => {
 
 console.log("Begin rewind");
 function rewind(steps: number) {
-  //changes[changes.length - 2]
-
-  //if (decoded.length > steps) {
   const previousState = Automerge.view(
     doc,
     decoded[decoded.length - steps].deps,
   );
 
   previewRewindDoc = previousState;
-  //}
 }
 
 let rewindNumber = 1;
